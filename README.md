@@ -1,22 +1,30 @@
 # WebAPIWithASP.NETCoreTutorial
 
+## Shortcuts
+PS: function prompt {">>:"}
 
-dotnet ef dbcontext scaffold "Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=Chinook" Microsoft.EntityFrameworkCore.SqlServer
-
---------------
-## TOPICS ##
---------------
 ### Installs 
 	Before scaffolding, you'll need to install either the PMC tools, which work on Visual Studio only, or the .NET CLI tools, which 	across all platforms supported by .NET.
 	Install the NuGet package for Microsoft.EntityFrameworkCore.Design in the project you are scaffolding to.
 	Install the NuGet package for the database provider that targets the database schema you want to scaffold from.
 	Link: https://learn.microsoft.com/en-us/ef/core/managing-schemas/scaffolding/?tabs=dotnet-core-cli
 	
-	dotnet add package Microsoft.EntityFrameworkCore.Design 
-dotnet add package 'Microsoft.EntityFrameworkCore.SqlServer
+	 
+	dotnet add package 'Microsoft.EntityFrameworkCore.SqlServer
+	Install-Package Microsoft.EntityFrameworkCore
+	Install-Package Microsoft.EntityFrameworkCore.Design
+	Install-Package Microsoft.VisualStudio.Web.CodeGeneration.Design
+
+
+
+--------------
+# TOPICS ##
+-------------- 
+## Scafolding Entities
 
 ### Scafolding - using connString in configurationfile
 dotnet ef dbcontext scaffold "Name=ConnectionStrings:CatalogoDB" Microsoft.EntityFrameworkCore.SqlServer
+dotnet ef dbcontext scaffold "Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=Chinook" Microsoft.EntityFrameworkCore.SqlServer
 
 ### Scafolding - options 
 dotnet ef dbcontext scaffold ... --table Artist --table Album
@@ -47,13 +55,32 @@ dotnet ef dbcontext scaffold "Name=ConnectionStrings:CatalogoDB" Microsoft.Entit
 
 dotnet ef dbcontext scaffold "Name=ConnectionStrings:CatalogoDB" Microsoft.EntityFrameworkCore.SqlServer --context-dir Data --output-dir Models --force
 
+## Scafolding Controllers
+
+Add New Scaffolded Item >> API >> API Controller with actions, using Entity Framework
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ----------------------------
 ### Future Improvments
 ----------------------------
 ### [1] - ConnectionStrings using Azure Key Vault 
 - https://learn.microsoft.com/en-us/ef/core/managing-schemas/scaffolding/?tabs=dotnet-core-cli  
 - (https://learn.microsoft.com/en-us/azure/key-vault/keys/quick-create-net)
-### [2] - 
+### [2] - Explore other controller types, topic: Scafolding Controllers
 
 ### [3] - 
 

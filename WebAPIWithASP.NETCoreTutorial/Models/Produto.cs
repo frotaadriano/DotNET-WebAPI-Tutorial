@@ -19,7 +19,7 @@ public partial class Produto
 
     public virtual ICollection<Avaliacao> Avaliacaos { get; set; } = new List<Avaliacao>();
 
-    public virtual Categorium? Categoria { get; set; }
+    public virtual Categoria? Categoria { get; set; }
 
     public virtual ICollection<Comentario> Comentarios { get; set; } = new List<Comentario>();
 }

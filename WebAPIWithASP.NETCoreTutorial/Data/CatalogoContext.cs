@@ -18,7 +18,7 @@ public partial class CatalogoContext : DbContext
 
     public virtual DbSet<Avaliacao> Avaliacaos { get; set; }
 
-    public virtual DbSet<Categorium> Categoria { get; set; }
+    public virtual DbSet<Categoria> Categoria { get; set; }
 
     public virtual DbSet<Comentario> Comentarios { get; set; }
 
@@ -45,7 +45,7 @@ public partial class CatalogoContext : DbContext
                 .HasConstraintName("FK__Avaliacao__Produ__38996AB5");
         });
 
-        modelBuilder.Entity<Categorium>(entity =>
+        modelBuilder.Entity<Categoria>(entity =>
         {
             entity.HasKey(e => e.CategoriaId).HasName("PK__Categori__F353C1E5C6293FA4");
 

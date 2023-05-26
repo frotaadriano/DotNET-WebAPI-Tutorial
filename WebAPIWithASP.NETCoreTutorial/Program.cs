@@ -1,6 +1,15 @@
+using Microsoft.EntityFrameworkCore;
+using System.Configuration;
+using WebAPIWithASP.NETCoreTutorial.Data;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+
+// setup EF service
+builder.Services.AddDbContext<CatalogoContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("CatalogoDB")));
+
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -12,9 +21,10 @@ var app = builder.Build();
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
-    app.UseSwagger();
-    app.UseSwaggerUI();
+    
 }
+app.UseSwagger();
+app.UseSwaggerUI();
 
 app.UseHttpsRedirection();
 
