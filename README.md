@@ -43,8 +43,10 @@ Entity types are configured using the ModelBuilder API in OnModelCreating by def
 ### Scafolding - Ours  
 dotnet ef dbcontext scaffold "Name=ConnectionStrings:CatalogoDB" Microsoft.EntityFrameworkCore.SqlServer --context-dir Data --output-dir Models
 
+[TIP] By default, the EF commands will not overwrite any existing code to protect against accidental code loss. The -Force (Visual Studio PMC) or --force (.NET CLI)
 
-### Scafolding - 
+dotnet ef dbcontext scaffold "Name=ConnectionStrings:CatalogoDB" Microsoft.EntityFrameworkCore.SqlServer --context-dir Data --output-dir Models --force
+
 ----------------------------
 ### Future Improvments
 ----------------------------
